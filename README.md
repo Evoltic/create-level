@@ -23,4 +23,4 @@ The hero position is the forth row and the third column
 
 The health box position is the seventh row and the sixth column
 
-When the hero moves to the health box then the box is disappears and hero gains more Health Points (HP)
+When the hero moves to the health box cell then the box disappears and hero gains more Health Points (HP)
