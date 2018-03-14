@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji');
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+
+
+$dark-blue: #000214;
+$neon-blue: #07cff6;
+$purple: #ac0559;
+$dark-purple: #620333;
+$white: rgba(238,242,243, 0.95);
+$neon-pink: #f60757;
+
+$navbar-height: 42px;
+
+
+
+body {
+  background: radial-gradient(ellipse at center, #2F0743 0%, $dark-blue 100%);
+  background-attachment: fixed;
+  margin: 0px;
+  padding: 0px;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: $dark-blue;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(7,207,246, 0.3);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(7,207,246, 0.4);
+}
+
+
+h1, h2, h3, h4 {
+  font-family: 'Baloo Paaji', cursive;
+  letter-spacing: 1.5px;
+  color: $white;
+}
+
+p {
+  font-family: 'Patua One', cursive;
+  letter-spacing: 1.1px;
+  color: $white;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0px;
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+  background: none;
+  color: $white;
+}
+
+::placeholder {
+	color: $white;
+	opacity: 0.3;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  color: $white;
+  box-shadow: 0px 0px 0.5px 0px $white;
+  border-radius: 5%;
+  margin: 0px 5px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: $dark-purple;
+}
+
+button:active {
+  background-color: $purple;
+}
+
+// .c-... is a child of .o-...
+
+.navbar {
+  width: 100%;
+  height: $navbar-height;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  opacity: 1;
+  background-color: $dark-blue;
+  box-shadow: 0px 0px 0px 2px $neon-blue,
+              0px 0px 30px -5px $neon-blue;
+  text-shadow: 0px 0px 1px $dark-blue,
+               1px 1px 1px $neon-pink,
+               2px 2px 2px $dark-purple;
+
+  .c-name {
+    margin: 0 20px;
+    color: white;
+  }
+}
+
+//
+// GENERAL COMPOSITION
+//
+
+main {
+  margin-top: $navbar-height;
+
+  .o-table {
+    min-height: 90vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-collapse: collapse;
+    overflow-x: auto;
+
+    tbody {
+      box-shadow: 0px 0px 30px -10px $purple;
+    }
+
+    td {
+      min-width: 15px;
+      height: 15px;
+      box-shadow: 0px 0px 0.15px 0.3px rgba(1, 1, 1, 0.15);
+    }
+  }
+
+  .o-setting {
+    display: grid;
+    height: 100vh;
+    animation: right-bar-opened 0.4s ease-in;
+    transition: 2s ease;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+    right: 0px;
+    top: 0;
+    padding: 10px 20px 0px 30px;
+    background: linear-gradient(to bottom, #0f0c29, $dark-blue);
+    box-shadow: 0px 0px 30px -4px #0f0c29;
+  }
+
+  .o-info {
+    display: grid;
+    min-width: 400px;
+    height: 100vh;
+    width: 300px;
+    color: white;
+    animation: right-bar-opened 0.4s ease-in;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: visible;
+    right: 0px;
+    top: 0;
+    padding: 10px 20px 0px 30px;
+    background: linear-gradient(to bottom, #0f0c29, $dark-blue);
+    box-shadow: 0px 0px 30px -4px #0f0c29;
+
+    img {
+      height: 200px;
+    }
+  }
+
+  .o-info--closed {
+    //for change this animation first visit './components/Info.js'
+    animation: right-bar-closed 0.31s ease-out;
+  }
+
+  .o-result {
+    position: fixed;
+    top: $navbar-height;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: $dark-blue;
+    border-bottom-left-radius: 2%;
+    box-shadow: 0px 2px 10px -4px $neon-blue;
+    animation: right-bar-opened 0.4s ease-in;
+
+    textarea {
+      min-width: 350px;
+      max-width: 600px;
+      min-height: 200px;
+      max-height: 30vw;
+    }
+
+    .o-result-bar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .c-copy {
+      cursor: pointer;
+    }
+
+    .c-copy:active:after {
+
+      content: "copied";
+      position: absolute;
+      font-family: 'Patua One', cursive;
+      letter-spacing: 1.1px;
+      color: $neon-blue;
+      animation: copied-animation 1s;
+    }
+  }
+
+  .o-result--closed {
+    //for change this animation first visit './components/Info.js'
+    animation: right-bar-closed 0.21s ease-out;
+  }
+
+  .o-color-bar {
+    position: fixed;
+    padding: 3px;
+    bottom: 20px;
+    display: flex;
+    background-color: $dark-blue;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0px 0px 0px 1px rgba(7,207,246, 0.4);
+    opacity: 0.9;
+    transition: box-shadow 0.4s, opacity 0.4s;
+
+    .c-color {
+      margin: 3px 5px;
+      width: 22px;
+      height: 20px;
+      border-radius: 15%;
+      box-shadow: 0px 0px 1px 0px $white;
+      cursor: pointer;
+      transition: transform 0.3s, opacity 0.1s;
+    }
+  }
+}
+
+//
+// COLOR BAR (left corner)
+//
+
+.o-color-bar:hover {
+  opacity: 1;
+  box-shadow: 0px 0px 0px 1px $neon-blue,
+              0px 0px 30px -7px $neon-blue;
+}
+
+.c-color:hover {
+  transform: scale(1.15, 1.15);
+  opacity: 1;
+}
+
+.c-color--selected {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.c-color--not-selected {
+  opacity: 0.3;
+}
+
+//
+// SETTING COMPOSITION:
+//
+
+// .o-setting {
+//   .o-setting-bar {
+//
+//   }
+//   .o-import {
+//
+//    }
+//   .c-clear-table {
+//
+//   }
+//   .o-table-size {
+//
+//   }
+//   .o-items {
+//
+//   }
+//   .o-new-item {
+//
+//   }
+// }
+
+.o-setting::-webkit-scrollbar {
+  width: 10px;
+}
+
+.o-setting::-webkit-scrollbar-track {
+  opacity: 0;
+}
+
+.o-setting::-webkit-scrollbar-thumb {
+  background-color: rgba(7,207,246, 0.3);
+}
+
+.o-setting::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(7,207,246, 0.4);
+}
+
+.o-setting--closed {
+  //for change this animation first visit './components/setting/Setting.js'
+  animation: right-bar-closed 0.41s ease-out;
+}
+
+//
+// SETTING BAR
+//
+
+.o-setting-bar {
+  min-width: 100%;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  color: $white;
+  border-radius: 0%;
+  border-bottom: 2.5px solid $dark-purple;
+
+  .o-setting-ico {
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+  }
+
+  .o-setting-name {
+    margin-right: auto;
+    margin-left: 4px;
+    text-shadow: 0px 0px 4px $dark-blue;
+  }
+
+  .o-setting-back {
+    font-size: 38px;
+  }
+}
+
+.o-setting-back:active {
+  animation: setting-close 2s;
+}
+
+//
+// SETTING "Import array" and "Clear table" buttons
+//
+
+.c-clear-table, .c-import-array {
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid $white;
+  cursor: pointer;
+}
+
+.c-clear-table:hover, .c-import-array:hover {
+  background-color: $dark-purple;
+}
+
+.c-clear-table:active, .c-import-array:active {
+  background-color: $purple;
+}
+
+//
+// SETTING "Import Array"
+//
+
+.o-import {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.c-import-array {
+    border-bottom: none;
+}
+
+.c-import-area {
+  min-width: 200px;
+  min-height: 50px;
+  max-width: 400px;
+  max-height: 300px;
+}
+
+//
+// SETTING "Table size"
+//
+
+.o-table-size {
+
+  .c-size-name {
+    margin-bottom: 0px;
+    text-shadow: 0px 0px 4px $dark-blue;
+  }
+
+  .o-size-form-div {
+    display: flex;
+    flex-direction: column;
+    color: $white;
+
+  }
+}
+
+//
+// SETTING "Items"
+//
+
+.o-item {
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 6px 0px;
+  transition: box-shadow 1.2s, border-color 1.2s,
+              border-radius 0.3s, transform 0.5s;
+
+  //blue circle
+  .c-item-select {
+    flex: 1;
+    margin-left: 3px;
+    transition: color 0.5s;
+  }
+
+  .o-item-color {
+    flex: 1;
+
+    .c-color-box {
+      border-radius: 20%;
+      box-shadow: 0px 0px 0.5px 0px $white;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .fa-eye-dropper {
+        color: black;
+        width: 14px;
+      }
+    }
+
+    .c-picker {
+      position: absolute;
+      outline: none;
+      z-index: 20;
+    }
+  }
+
+  .o-input-element {
+    flex: 4;
+
+    .o-element-from {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .c-item-dlt {
+    flex: 1;
+    color: $neon-pink;
+    cursor: pointer;
+  }
+
+  .c-item-select, .c-item-dlt  {
+    display: flex;
+    align-items: center;
+  }
+}
+
+//
+// SETTING "Items": first child is a default element
+//
+
+.o-item:first-child {
+  padding: 7px 0px 7px 10px;
+  border-bottom: 0.5px solid rgba(5,144,172, 0.9);
+  border-radius: 5px;
+  margin-bottom: 15px;
+
+  .c-item-select {
+    flex: 1;
+  }
+
+  .o-item-color {
+    flex: 1;
+  }
+
+  .o-input-element {
+    flex: 4;
+  }
+
+  .c-item-dlt {
+    display: none;
+  }
+}
+
+.item--selected:not(:first-child) {
+  border-top: 1px solid $neon-pink;
+  border-bottom: 1px solid $neon-pink;
+  border-radius: 5px;
+  box-shadow: 0px 0px 35px -10px rgb(246,7,87);
+  transform: scale(1.05, 1.05);
+
+  .c-item-select {
+    color: $neon-blue;
+  }
+}
+
+
+.item--selected:first-child {
+  border-top: 0.5px solid $neon-blue;
+  border-radius: 4px;
+
+  .c-item-select {
+    color: $neon-blue;
+  }
+}
+
+.item--not-selected {
+  .c-item-select {
+    color: rgba(200, 200, 200, 0.2);
+    cursor: pointer;
+  }
+}
+
+//
+// SETTING "Items": input form "Add new element"
+//
+
+.o-new-item {
+  margin: 10px 10px 20px;
+}
+
+//
+// Animations
+//
+
+@keyframes right-bar-opened {
+  0% {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateX(-10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+
+@keyframes right-bar-closed {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(600px);
+  }
+}
+
+
+@keyframes copied-animation {
+  0% {
+    transform: translateY(-18px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-25px);
+    opacity: 0.4;
+  }
+}
