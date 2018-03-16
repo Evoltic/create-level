@@ -1,15 +1,25 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Lvl Creator",
+  "name": "Level Creator",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "fa192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "fa512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "index.html",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#000214",
+  "background_color": "#2F0743"
 }
