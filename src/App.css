@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Baloo+Paaji");
-@import url("https://fonts.googleapis.com/css?family=Patua+One");
+@import url("https://fonts.googleapis.com/css?family=Baloo+Paaji|Patua+One");
 body {
   background: radial-gradient(ellipse at center, #2F0743 0%, #000214 100%);
   background-attachment: fixed;
@@ -79,9 +78,15 @@ button:active {
   background-color: #000214;
   box-shadow: 0px 0px 0px 2px #07cff6, 0px 0px 30px -5px #07cff6;
   text-shadow: 0px 0px 1px #000214, 1px 1px 1px #f60757, 2px 2px 2px #620333; }
+  .navbar .c-project-name {
+    margin-right: auto;
+    margin-left: 10px; }
   .navbar .c-name {
     margin: 0 20px;
     color: white; }
+  @media screen and (max-width: 560px) {
+    .navbar .c-project-name {
+      display: none; } }
 
 main {
   margin-top: 42px; }
@@ -113,25 +118,8 @@ main {
     padding: 10px 20px 0px 30px;
     background: linear-gradient(to bottom, #0f0c29, #000214);
     box-shadow: 0px 0px 30px -4px #0f0c29; }
-  main .o-info {
-    display: grid;
-    min-width: 400px;
-    height: 100vh;
-    width: 300px;
-    color: white;
-    animation: right-bar-opened 0.4s ease-in;
-    position: fixed;
-    overflow-y: auto;
-    overflow-x: visible;
-    right: 0px;
-    top: 0;
-    padding: 10px 20px 0px 30px;
-    background: linear-gradient(to bottom, #0f0c29, #000214);
-    box-shadow: 0px 0px 30px -4px #0f0c29; }
-    main .o-info img {
-      height: 200px; }
-  main .o-info--closed {
-    animation: right-bar-closed 0.31s ease-out; }
+  main .o-setting--closed {
+    animation: right-bar-closed 0.41s ease-out; }
   main .o-result {
     position: fixed;
     top: 42px;
@@ -161,7 +149,7 @@ main {
       color: #07cff6;
       animation: copied-animation 1s; }
   main .o-result--closed {
-    animation: right-bar-closed 0.21s ease-out; }
+    animation: right-bar-closed 0.3s ease-out; }
   main .o-color-bar {
     position: fixed;
     padding: 3px;
@@ -208,9 +196,6 @@ main {
 
 .o-setting::-webkit-scrollbar-thumb:hover {
   background-color: rgba(7, 207, 246, 0.4); }
-
-.o-setting--closed {
-  animation: right-bar-closed 0.41s ease-out; }
 
 .o-setting-bar {
   min-width: 100%;

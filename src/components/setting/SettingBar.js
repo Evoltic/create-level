@@ -14,7 +14,7 @@ const SettingBar = ({ onCloseClick }) => (
     </li>
 
     <li className="o-setting-back" onClick={onCloseClick}>
-      <DelayLink to="/" delay={360}>
+      <DelayLink to={process.env.PUBLIC_URL + "/"} delay={360}>
         <i className="fas fa-angle-right" />
       </DelayLink>
     </li>

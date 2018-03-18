@@ -18,6 +18,9 @@ import throttle from 'lodash/throttle'
 
 import './fontawesome-all.js';
 
+import registerServiceWorker from './registerServiceWorker';
+
+
 const history = createHistory();
 
 const store = createStore(setting,
@@ -37,8 +40,10 @@ store.subscribe(throttle(() => {
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Route path="/" component={App} />
+      <Route path={process.env.PUBLIC_URL + "/"} component={App} />
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 )
+
+registerServiceWorker();

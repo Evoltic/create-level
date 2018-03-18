@@ -19,7 +19,7 @@ class Result extends React.Component {
     this.setState({ className: "o-result o-result--closed" })
     setTimeout(() => (
       this.setState({ className: "o-result" })
-    ), 150)
+    ), 250)
   }
 
   render() {
@@ -39,7 +39,7 @@ class Result extends React.Component {
           </li>
 
           <li onClick={this.onCloseClick}>
-            <DelayLink to="/" delay={160}>
+            <DelayLink to={process.env.PUBLIC_URL + "/"} delay={270}>
               <h3 className="c-close"> Close </h3>
             </DelayLink>
           </li>

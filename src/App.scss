@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji');
-@import url('https://fonts.googleapis.com/css?family=Patua+One');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji|Patua+One');
 
 
 $dark-blue: #000214;
@@ -10,6 +9,7 @@ $white: rgba(238,242,243, 0.95);
 $neon-pink: #f60757;
 
 $navbar-height: 42px;
+
 
 
 
@@ -37,65 +37,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 
-h1, h2, h3, h4 {
-  font-family: 'Baloo Paaji', cursive;
-  letter-spacing: 1.5px;
-  color: $white;
-}
-
-p {
-  font-family: 'Patua One', cursive;
-  letter-spacing: 1.1px;
-  color: $white;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  padding: 0px;
-  list-style-type: none;
-}
-
-li {
-  display: flex;
-  align-items: center;
-}
-
-input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
-  background: none;
-  color: $white;
-}
-
-::placeholder {
-	color: $white;
-	opacity: 0.3;
-}
-
-button {
-  border: none;
-  outline: none;
-  background: none;
-  color: $white;
-  box-shadow: 0px 0px 0.5px 0px $white;
-  border-radius: 5%;
-  margin: 0px 5px;
-  padding: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: $dark-purple;
-}
-
-button:active {
-  background-color: $purple;
-}
-
 // .c-... is a child of .o-...
 
 .navbar {
@@ -114,9 +55,20 @@ button:active {
                1px 1px 1px $neon-pink,
                2px 2px 2px $dark-purple;
 
+  .c-project-name {
+    margin-right: auto;
+    margin-left: 10px;
+  }
+
   .c-name {
     margin: 0 20px;
     color: white;
+  }
+
+  @media screen and (max-width: 560px) {
+    .c-project-name {
+      display: none;
+    }
   }
 }
 
@@ -168,32 +120,6 @@ main {
     animation: right-bar-closed 0.41s ease-out;
   }
 
-  .o-info {
-    display: grid;
-    min-width: 400px;
-    height: 100vh;
-    width: 300px;
-    color: white;
-    animation: right-bar-opened 0.4s ease-in;
-    position: fixed;
-    overflow-y: auto;
-    overflow-x: visible;
-    right: 0px;
-    top: 0;
-    padding: 10px 20px 0px 30px;
-    background: linear-gradient(to bottom, #0f0c29, $dark-blue);
-    box-shadow: 0px 0px 30px -4px #0f0c29;
-
-    img {
-      height: 200px;
-    }
-  }
-
-  .o-info--closed {
-    //for change this animation first visit './components/Info.js'
-    animation: right-bar-closed 0.31s ease-out;
-  }
-
   .o-result {
     position: fixed;
     top: $navbar-height;
@@ -234,8 +160,8 @@ main {
   }
 
   .o-result--closed {
-    //for change this animation first visit './components/Info.js'
-    animation: right-bar-closed 0.21s ease-out;
+    //for change this animation first visit './components/Result.js'
+    animation: right-bar-closed 0.3s ease-out;
   }
 
   .o-color-bar {
@@ -550,6 +476,69 @@ main {
 
 .o-new-item {
   margin: 10px 10px 20px;
+}
+
+//
+//
+//
+
+h1, h2, h3, h4 {
+  font-family: 'Baloo Paaji', cursive;
+  letter-spacing: 1.5px;
+  color: $white;
+}
+
+p {
+  font-family: 'Patua One', cursive;
+  letter-spacing: 1.1px;
+  color: $white;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0px;
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+  background: none;
+  color: $white;
+}
+
+::placeholder {
+	color: $white;
+	opacity: 0.3;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  color: $white;
+  box-shadow: 0px 0px 0.5px 0px $white;
+  border-radius: 5%;
+  margin: 0px 5px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: $dark-purple;
+}
+
+button:active {
+  background-color: $purple;
 }
 
 //
