@@ -82,4 +82,4 @@ Also you can change a color that visualise your value:
 ![Items screenshot](https://raw.githubusercontent.com/Evoltic/create-level/master/src/img/items_ss.png)
 
 ## Hope this will help for you! ✌️
-**If so, please use the star button**
+**If so, please use the star button 🌟**
