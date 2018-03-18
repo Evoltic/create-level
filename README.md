@@ -1,5 +1,5 @@
 # Create simple game levels
-## General idea
+## General idea 💡
 
 **Any playfield can be represented in the form of a table**
 
