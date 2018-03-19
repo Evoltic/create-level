@@ -8,16 +8,16 @@ export const defaultItems = [
     element: 1
   },
   {
-    color: 'black',
-    element: 2
+    color: '#1e90ff',
+    element: "hero"
   },
   {
-    color: '#8e4937',
-    element: ""
+    color: '#008000',
+    element: "healthBox"
   },
   {
-    color: '#378e49',
-    element: "grass"
+    color: '#ffa500',
+    element: "weapon"
   }
 ]
 

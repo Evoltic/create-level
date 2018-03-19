@@ -11,8 +11,6 @@ $neon-pink: #f60757;
 $navbar-height: 42px;
 
 
-
-
 body {
   background: radial-gradient(ellipse at center, #2F0743 0%, $dark-blue 100%);
   background-attachment: fixed;
@@ -36,6 +34,65 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgba(7,207,246, 0.4);
 }
 
+
+h1, h2, h3, h4 {
+  font-family: 'Baloo Paaji', cursive;
+  letter-spacing: 1.5px;
+  color: $white;
+}
+
+p {
+  font-family: 'Patua One', cursive;
+  letter-spacing: 1.1px;
+  color: $white;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0px;
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+  background: none;
+  color: $white;
+}
+
+::placeholder {
+	color: $white;
+	opacity: 0.3;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  color: $white;
+  box-shadow: 0px 0px 0.5px 0px $white;
+  border-radius: 5%;
+  margin: 0px 5px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: $dark-purple;
+}
+
+button:active {
+  background-color: $purple;
+}
 
 // .c-... is a child of .o-...
 
@@ -476,69 +533,6 @@ main {
 
 .o-new-item {
   margin: 10px 10px 20px;
-}
-
-//
-//
-//
-
-h1, h2, h3, h4 {
-  font-family: 'Baloo Paaji', cursive;
-  letter-spacing: 1.5px;
-  color: $white;
-}
-
-p {
-  font-family: 'Patua One', cursive;
-  letter-spacing: 1.1px;
-  color: $white;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  padding: 0px;
-  list-style-type: none;
-}
-
-li {
-  display: flex;
-  align-items: center;
-}
-
-input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
-  background: none;
-  color: $white;
-}
-
-::placeholder {
-	color: $white;
-	opacity: 0.3;
-}
-
-button {
-  border: none;
-  outline: none;
-  background: none;
-  color: $white;
-  box-shadow: 0px 0px 0.5px 0px $white;
-  border-radius: 5%;
-  margin: 0px 5px;
-  padding: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: $dark-purple;
-}
-
-button:active {
-  background-color: $purple;
 }
 
 //
