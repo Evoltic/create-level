@@ -1,7 +1,7 @@
 {
   "name": "vis",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://evoltic.github.io/create-level",
   "dependencies": {
     "font-awesome": "^4.7.0",
